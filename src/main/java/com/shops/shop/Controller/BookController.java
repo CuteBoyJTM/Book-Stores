@@ -43,6 +43,7 @@ public class BookController {
             @Param("publisher_id")int publisher_id,
             @Param("pages")int pages,
             @Param("proportion")double proportion,
+            @Param("price")double price,
             @Param("photos") MultipartFile photos
     ){
         Result result = new Result();
@@ -76,7 +77,7 @@ public class BookController {
                         result.setMsg("Error!");
                         log.error("存入目录失败.");
                     }
-                    addBookInterface.addBook(name,author,theme, publisher_id,pages,proportion,rootPath);
+                    addBookInterface.addBook(name,author,theme, publisher_id,pages,proportion,price,rootPath);
                     result.setStatus(100);
                     result.setMsg("添加成功.");
                     result.setValue(rootPath);

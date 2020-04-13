@@ -9,13 +9,14 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface AddBookDao {
-    @Insert("Call addBook(#{name},#{author},#{theme},#{publisher_id},#{pages},#{proportion},#{photo})")
+    @Insert("Call addBook(#{name},#{author},#{theme},#{publisher_id},#{pages},#{proportion},#{price},#{photo})")
     void addBook(@Param("name")String name,
                  @Param("author")String author,
                  @Param("theme")String theme,
                  @Param("publisher_id")int publisher_id,
                  @Param("pages")int pages,
                  @Param("proportion")double proportion,
+                 @Param("price")double price,
                  @Param("photo")String photo);
     @Insert("Call ReviseBook(#{id},#{name},#{author},#{theme},#{publisher_id},#{pages},#{proportion},#{photo})")
     void ReviseBook(@Param("id")int id,

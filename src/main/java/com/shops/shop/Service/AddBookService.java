@@ -10,8 +10,8 @@ public class AddBookService implements AddBookInterface {
     @Autowired
     AddBookDao addBookDao;
     @Override
-    public void addBook(String name,String author,String theme,int publisher_id,int pages,double proportion,String photo){
-        addBookDao.addBook(name, author, theme, publisher_id, pages, proportion,photo);
+    public void addBook(String name,String author,String theme,int publisher_id,int pages,double proportion,double price,String photo){
+        addBookDao.addBook(name, author, theme, publisher_id, pages, proportion,price,photo);
     };
     @Override
     public void deleteBook(int id){
