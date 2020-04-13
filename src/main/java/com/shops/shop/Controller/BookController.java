@@ -6,6 +6,7 @@ import com.shops.shop.Bean.BooksAll;
 import com.shops.shop.Bean.Result;
 import com.shops.shop.Interface.AddBookInterface;
 import com.shops.shop.Interface.DeleteBookInterface;
+import com.shops.shop.Interface.ExportBookInterface;
 import com.shops.shop.Interface.GetBookInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Param;
@@ -312,5 +313,51 @@ public class BookController {
         }
         return result;
     }
+    @Autowired
+    ExportBookInterface exportBookInterface;
+    @RequestMapping(value = "/exportBook", method = RequestMethod.POST)
+    @CrossOrigin(origins = "*")
+    public Result exportBook(
+            @Param("book_id")int book_id,
+            @Param("store_id")int store_id
+    ){
+        Result result = new Result();
+        try {
+            exportBookInterface.exportBook(book_id, store_id);
+                result.setStatus(100);
+                result.setMsg("获取成功.");
+                log.info("获取成功.");
 
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setStatus(601);
+            result.setMsg("Error!");
+            log.error("操作出现异常.");
+        }
+        return result;
+    }
+    @RequestMapping(value = "/importBook", method = RequestMethod.POST)
+    @CrossOrigin(origins = "*")
+    public Result importBook(
+            @Param("book_id")int book_id,
+            @Param("store_id")int store_id,
+            @Param("number")int number,
+            @Param("price")double price
+    ){
+        Result result = new Result();
+        try {
+            exportBookInterface.importBook(book_id, store_id, number, price);
+                result.setStatus(100);
+                result.setMsg("获取成功.");
+
+                log.info("获取成功.");
+
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setStatus(601);
+            result.setMsg("Error!");
+            log.error("操作出现异常.");
+        }
+        return result;
+    }
 }
