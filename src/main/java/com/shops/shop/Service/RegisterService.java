@@ -14,7 +14,7 @@ public class RegisterService implements RegisterInterface {
         return registerDao.checkAccount(account);
     };
     @Override
-    public int Register(int type, String account, String pwd, String name, int phone, String address, int bank_account, String email){
+    public int Register(int type, String account, String pwd, String name, int phone, String address, long bank_account, String email){
         return registerDao.Register(type, account, pwd, name, phone, address, bank_account, email);
     };
 }

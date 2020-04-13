@@ -181,7 +181,7 @@ public class UserController {
             @RequestParam(value = "name")String name,
             @RequestParam(value = "phone",defaultValue = "0")int phone,
             @RequestParam(value = "address",required = false)String address,
-            @RequestParam(value = "bank_account",defaultValue = "0")int bank_account,
+            @RequestParam(value = "bank_account",defaultValue = "0")long bank_account,
             @RequestParam(value = "email",required = false)String email
     ) {
         Result result = new Result();

@@ -15,6 +15,6 @@ public interface RegisterDao {
                  @Param("name")String name,
                  @Param("phone")int phone,
                  @Param("address")String address,
-                 @Param("bank_account")int bank_account,
+                 @Param("bank_account")long bank_account,
                  @Param("email")String email);
 }

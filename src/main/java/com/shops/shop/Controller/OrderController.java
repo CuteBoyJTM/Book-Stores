@@ -237,6 +237,7 @@ public class OrderController {
                 for(int i = 0;i<orderLists.size();i++){
                     OrderFirst orderFirst = new OrderFirst();
                     orderFirst.setOrderList(orderLists.get(i));
+                    System.out.println(orderLists.get(i).getId());
                     orderFirst.setBooks(getOrderInterface.getOrderFirstBook(orderLists.get(i).getId()).get(0));
                     orderFirsts.add(orderFirst);
                 }
