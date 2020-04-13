@@ -92,10 +92,17 @@ public class CartController {
         return  result;
     };
     private class ReturnCartMap{
+        int total_count;
         private Total total;
         private List<ReturnCart> returnCarts;
 
+        public int getTotal_count() {
+            return total_count;
+        }
 
+        public void setTotal_count(int total_count) {
+            this.total_count = total_count;
+        }
 
         public Total getTotal() {
             return total;
@@ -142,7 +149,8 @@ public class CartController {
         Result result = new Result();
         try{
             ReturnCartMap returnCartMap = new ReturnCartMap();
-
+            int total_count = getCartInterface.getCartCount(user_id);
+            returnCartMap.setTotal_count(total_count);
             Total total =  getCartInterface.getCartInfo(user_id);
             returnCartMap.setTotal(total);
             List<Stores> stores= getCartInterface.getCartStores(user_id);

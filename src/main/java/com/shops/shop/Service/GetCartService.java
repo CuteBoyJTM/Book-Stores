@@ -26,4 +26,8 @@ public class GetCartService implements GetCartInterface {
     public Total getCartInfo(int user_id){
         return getCartDao.getCartInfo(user_id);
     };
+    @Override
+    public int getCartCount(int user_id){
+        return getCartDao.getCartCount(user_id);
+    };
 }

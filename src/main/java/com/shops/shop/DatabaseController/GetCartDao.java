@@ -20,4 +20,6 @@ public interface GetCartDao {
     List<Stores> getCartStores(@Param("user_id")int user_id);
     @Select("Call getCartInfo(#{user_id})")
     Total getCartInfo(@Param("user_id")int user_id);
+    @Select("Call getCartCount(#{user_id})")
+    int getCartCount(@Param("user_id")int user_id);
 }

@@ -10,4 +10,5 @@ public interface GetCartInterface {
     List<Books> getCartBooks(int user_id,int store_id);
     List<Stores> getCartStores(int user_id);
     Total getCartInfo(int user_id);
+    int getCartCount(int user_id);
 }
