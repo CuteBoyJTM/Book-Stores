@@ -1,6 +1,6 @@
 package com.shops.shop.Interface;
 
 public interface PayForOrderInterface {
-    void payForOrder(int receiving_address_id,
+    void payForOrder(
                      int order_id);
 }

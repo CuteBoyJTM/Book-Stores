@@ -10,8 +10,8 @@ public class PayForOrderService implements PayForOrderInterface {
     @Autowired
     PayForOrderDao payForOrderDao;
     @Override
-    public void payForOrder(int receiving_address_id,
+    public void payForOrder(
                             int order_id){
-        payForOrderDao.payForOrder(receiving_address_id, order_id);
+        payForOrderDao.payForOrder( order_id);
     };
 }

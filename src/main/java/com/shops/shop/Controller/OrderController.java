@@ -31,16 +31,40 @@ public class OrderController {
     @CrossOrigin(origins = "*")
     public Result addOrderContent(
             @Param("user_id")int user_id,
-            @Param("contentList")List<OrderContent> orderContents
+            @Param("receiving_address_id")int receiving_address_id,
+            @Param("book_id")int book_id,
+            @Param("store_id")int store_id,
+            @Param("book_number")int book_number
     ){
         Result result = new Result();
         System.out.println(user_id);
         try{
             int rs = (int) ((Math.random() * 9 + 1) * Math.pow(10, 15 - 1));
-            addOrderInterface.addOrder(rs,user_id);
-            for(int i = 0;i<orderContents.size();i++){
-                addOrderInterface.addOrderContent(rs,orderContents.get(i).getBook_id(),orderContents.get(i).getStore_id(),orderContents.get(i).getBook_number());
-            }
+            addOrderInterface.addOrder(1,rs,user_id,receiving_address_id);
+            addOrderInterface.addOrderContent(rs,book_id,store_id,book_number);
+            result.setStatus(100);
+            result.setMsg("添加成功.");
+            result.setValue(rs);
+            log.info("添加成功.");
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setStatus(601);
+            result.setMsg("Error!");
+            log.error("操作出现异常.");
+        }
+        return result;
+    };
+    @RequestMapping(value = "/addOrderContentFromCart", method = RequestMethod.POST)
+    @CrossOrigin(origins = "*")
+    public Result addOrderContentFromCart(
+            @Param("user_id")int user_id,
+            @Param("receiving_address_id")int receiving_address_id
+    ){
+        Result result = new Result();
+        System.out.println(user_id);
+        try{
+            int rs = (int) ((Math.random() * 9 + 1) * Math.pow(10, 15 - 1));
+            addOrderInterface.addOrder(2,rs,user_id,receiving_address_id);
             result.setStatus(100);
             result.setMsg("添加成功.");
             result.setValue(rs);
@@ -100,12 +124,11 @@ public class OrderController {
     @RequestMapping(value = "/payForOrder", method = RequestMethod.POST)
     @CrossOrigin(origins = "*")
     public Result payForOrder(
-            @Param("receiving_address_id")int receiving_address_id,
             @Param("order_id")int order_id
     ){
         Result result = new Result();
         try {
-            payForOrderInterface.payForOrder(receiving_address_id, order_id);
+            payForOrderInterface.payForOrder(order_id);
             result.setStatus(100);
             result.setMsg("付款成功.");
             log.info("付款成功.");

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface PayForOrderDao {
-    @Insert("Call payForOrder(#{receiving_address_id},#{order_id})")
-    void payForOrder(@Param("receiving_address_id")int receiving_address_id,
+    @Insert("Call payForOrder(#{order_id})")
+    void payForOrder(
                      @Param("order_id")int order_id);
 }

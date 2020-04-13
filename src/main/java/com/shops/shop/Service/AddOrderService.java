@@ -10,9 +10,11 @@ public class AddOrderService implements AddOrderInterface {
     @Autowired
     AddOrderDao addOrderDao;
     @Override
-    public void addOrder(int order_id,
-                         int user_id){
-        addOrderDao.addOrder(order_id, user_id);
+    public void addOrder(int type,
+                         int order_id,
+                         int user_id,
+                         int receiving_address_id){
+        addOrderDao.addOrder(type,order_id, user_id,receiving_address_id);
     };
     @Override
     public void addOrderContent(int order_id,

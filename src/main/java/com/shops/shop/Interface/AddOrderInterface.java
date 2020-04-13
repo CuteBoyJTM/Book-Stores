@@ -1,8 +1,10 @@
 package com.shops.shop.Interface;
 
 public interface AddOrderInterface {
-    void addOrder(int order_id,
-                  int user_id);
+    void addOrder(int type,
+                  int order_id,
+                  int user_id,
+                  int receiving_address_id);
     void addOrderContent(int order_id,
                          int book_id,
                          int store_id,
