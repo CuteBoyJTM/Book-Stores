@@ -805,3 +805,17 @@ java.lang.IllegalStateException: Optional int parameter 'id' is present but cann
 2020-04-13 23:04:31.609  INFO 13520 --- [http-nio-8082-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2020-04-13 23:04:32.031  INFO 13520 --- [http-nio-8082-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2020-04-13 23:04:32.163  INFO 13520 --- [http-nio-8082-exec-2] c.shops.shop.Controller.OrderController  : 添加成功.
+2020-04-13 23:07:18.600  INFO 8060 --- [main] com.shops.shop.ShopApplication           : Starting ShopApplication on TR-PC with PID 8060 (started by Jiangming in E:\兼职\book\book)
+2020-04-13 23:07:18.601  INFO 8060 --- [main] com.shops.shop.ShopApplication           : No active profile set, falling back to default profiles: default
+2020-04-13 23:07:19.052  INFO 8060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-13 23:07:19.071  INFO 8060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2020-04-13 23:07:19.236  INFO 8060 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a82b6996] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-13 23:07:19.401  INFO 8060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2020-04-13 23:07:19.415  INFO 8060 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-13 23:07:19.415  INFO 8060 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-04-13 23:07:19.500  INFO 8060 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-13 23:07:19.500  INFO 8060 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 874 ms
+2020-04-13 23:07:19.790  INFO 8060 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-13 23:07:19.993  INFO 8060 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2020-04-13 23:07:19.995  INFO 8060 --- [main] com.shops.shop.ShopApplication           : Started ShopApplication in 1.621 seconds (JVM running for 2.189)
+2020-04-13 23:07:19.997  INFO 8060 --- [main] com.shops.shop.ShopApplication           : ●=>商店App后台服务启动...●

@@ -4,10 +4,7 @@ import com.shops.shop.Bean.Book;
 import com.shops.shop.Bean.Books;
 import com.shops.shop.Bean.BooksAll;
 import com.shops.shop.Bean.Result;
-import com.shops.shop.Interface.AddBookInterface;
-import com.shops.shop.Interface.DeleteBookInterface;
-import com.shops.shop.Interface.ExportBookInterface;
-import com.shops.shop.Interface.GetBookInterface;
+import com.shops.shop.Interface.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -351,6 +348,31 @@ public class BookController {
                 result.setMsg("获取成功.");
 
                 log.info("获取成功.");
+
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setStatus(601);
+            result.setMsg("Error!");
+            log.error("操作出现异常.");
+        }
+        return result;
+    }
+    @Autowired
+    RevisePriceInterface revisePriceInterface;
+    @RequestMapping(value = "/revisePrice", method = RequestMethod.POST)
+    @CrossOrigin(origins = "*")
+    public Result revisePrice(
+            @Param("book_id")int book_id,
+            @Param("store_id")int store_id,
+            @Param("price")double price
+    ){
+        Result result = new Result();
+        try {
+            revisePriceInterface.revisePrice(book_id, store_id, price);
+            result.setStatus(100);
+            result.setMsg("获取成功.");
+
+            log.info("获取成功.");
 
         }catch (Exception e){
             e.printStackTrace();
