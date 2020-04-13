@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -23,8 +24,42 @@ public class StatisticsController {
     GetStatisticsInterface getStatisticsInterface;
     class ReturnStatistics{
         private Statistics statistics;
-        private List<StatisticsByAuthor> statisticsByAuthor;
-        private List<StatisticsByTheme> statisticsByTheme;
+        private String[] author;
+        private String[] theme;
+        private int[] authorValue;
+        private int[] themeValue;
+
+        public String[] getAuthor() {
+            return author;
+        }
+
+        public void setAuthor(String[] author) {
+            this.author = author;
+        }
+
+        public String[] getTheme() {
+            return theme;
+        }
+
+        public void setTheme(String[] theme) {
+            this.theme = theme;
+        }
+
+        public int[] getAuthorValue() {
+            return authorValue;
+        }
+
+        public void setAuthorValue(int[] authorValue) {
+            this.authorValue = authorValue;
+        }
+
+        public int[] getThemeValue() {
+            return themeValue;
+        }
+
+        public void setThemeValue(int[] themeValue) {
+            this.themeValue = themeValue;
+        }
 
         public Statistics getStatistics() {
             return statistics;
@@ -34,21 +69,7 @@ public class StatisticsController {
             this.statistics = statistics;
         }
 
-        public List<StatisticsByAuthor> getStatisticsByAuthor() {
-            return statisticsByAuthor;
-        }
 
-        public void setStatisticsByAuthor(List<StatisticsByAuthor> statisticsByAuthor) {
-            this.statisticsByAuthor = statisticsByAuthor;
-        }
-
-        public List<StatisticsByTheme> getStatisticsByTheme() {
-            return statisticsByTheme;
-        }
-
-        public void setStatisticsByTheme(List<StatisticsByTheme> statisticsByTheme) {
-            this.statisticsByTheme = statisticsByTheme;
-        }
     }
     @RequestMapping(value = "/getStatistics", method = RequestMethod.POST)
     @CrossOrigin(origins = "*")
@@ -59,8 +80,24 @@ public class StatisticsController {
         try{
             ReturnStatistics returnStatistics = new ReturnStatistics();
             returnStatistics.setStatistics(getStatisticsInterface.getStatistics(store_id));
-            returnStatistics.setStatisticsByAuthor(getStatisticsInterface.getStatisticsByAuthor(store_id));
-            returnStatistics.setStatisticsByTheme(getStatisticsInterface.getStatisticsByTheme(store_id));
+            List<StatisticsByAuthor> statisticsByAuthors = new ArrayList<>(getStatisticsInterface.getStatisticsByAuthor(store_id));
+            List<StatisticsByTheme> statisticsByThemes = new ArrayList<>(getStatisticsInterface.getStatisticsByTheme(store_id));
+            String[] author = new String[statisticsByAuthors.size()];
+            String[] theme= new String[statisticsByThemes.size()];
+            int[] authorValue= new int[statisticsByAuthors.size()];;
+            int[] themeValue= new int[statisticsByThemes.size()];;
+            for(int i = 0;i<statisticsByAuthors.size();i++){
+                author[i]=statisticsByAuthors.get(i).getAuthor();
+                authorValue[i]=statisticsByAuthors.get(i).getVolume();
+            }
+            for(int i = 0;i<statisticsByThemes.size();i++){
+                theme[i]=statisticsByThemes.get(i).getTheme();
+                themeValue[i]=statisticsByThemes.get(i).getVolume();
+            }
+            returnStatistics.setAuthor(author);
+            returnStatistics.setAuthorValue(authorValue);
+            returnStatistics.setTheme(theme);
+            returnStatistics.setThemeValue(themeValue);
             result.setStatus(100);
             result.setMsg("获取成功.");
             result.setValue(returnStatistics);
