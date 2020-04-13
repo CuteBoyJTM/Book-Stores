@@ -78,6 +78,27 @@ public class ReceivingAddressController {
         }
         return result;
     }
+    @RequestMapping(value = "/setDefault", method = RequestMethod.POST)
+    @CrossOrigin(origins = "*")
+    public Result setDefault(
+            @Param("user_id")int user_id,
+            @Param("receiving_address_id")int receiving_address_id
+    ){
+        Result result = new Result();
+        try {
+                addReceivingAddressInterface.setDefault(user_id, receiving_address_id);
+                result.setStatus(100);
+                result.setMsg("设置成功.");
+                log.info("设置成功.");
+
+        }catch (Exception e){
+            e.printStackTrace();
+            result.setStatus(601);
+            result.setMsg("Error!");
+            log.error("操作出现异常.");
+        }
+        return result;
+    }
     @RequestMapping(value = "/addReceivingAddress", method = RequestMethod.POST)
     @CrossOrigin(origins = "*")
     public Result addReceivingAddress(

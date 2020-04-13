@@ -21,4 +21,9 @@ public class AddReceivingAddressService implements AddReceivingAddressInterface 
     public void deleteReceivingAddress(int id){
         addReceivingAddressDao.deleteReceivingAddress(id);
     };
+    @Override
+    public void setDefault(int user_id,
+                           int receiving_address_id){
+        addReceivingAddressDao.setDefault(user_id, receiving_address_id);
+    };
 }

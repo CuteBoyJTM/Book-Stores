@@ -7,4 +7,6 @@ public interface AddReceivingAddressInterface {
                              String address,
                              int _default);
     void deleteReceivingAddress(int id);
+    void setDefault(int user_id,
+                    int receiving_address_id);
 }

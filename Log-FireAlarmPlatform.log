@@ -111,3 +111,43 @@
 2020-04-13 10:50:10.533  INFO 17804 --- [http-nio-8082-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2020-04-13 10:50:10.629  INFO 17804 --- [http-nio-8082-exec-2] c.shops.shop.Controller.CartController   : 修改成功.
 2020-04-13 10:50:17.149  INFO 17804 --- [http-nio-8082-exec-3] c.shops.shop.Controller.CartController   : 修改成功.
+2020-04-13 11:26:43.297  INFO 20712 --- [main] com.shops.shop.ShopApplication           : Starting ShopApplication on TR-PC with PID 20712 (started by Jiangming in E:\兼职\book\book)
+2020-04-13 11:26:43.299  INFO 20712 --- [main] com.shops.shop.ShopApplication           : No active profile set, falling back to default profiles: default
+2020-04-13 11:26:43.770  INFO 20712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-13 11:26:43.789  INFO 20712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2020-04-13 11:26:43.969  INFO 20712 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$68d0a9c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-13 11:26:44.144  INFO 20712 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2020-04-13 11:26:44.159  INFO 20712 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-13 11:26:44.159  INFO 20712 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-04-13 11:26:44.241  INFO 20712 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-13 11:26:44.242  INFO 20712 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 907 ms
+2020-04-13 11:26:44.537  INFO 20712 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-13 11:26:44.747  INFO 20712 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2020-04-13 11:26:44.750  INFO 20712 --- [main] com.shops.shop.ShopApplication           : Started ShopApplication in 1.691 seconds (JVM running for 2.298)
+2020-04-13 11:26:44.752  INFO 20712 --- [main] com.shops.shop.ShopApplication           : ●=>商店App后台服务启动...●
+2020-04-13 11:26:47.805  INFO 20712 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-13 11:26:47.806  INFO 20712 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-13 11:26:47.810  INFO 20712 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-04-13 11:26:47.841  INFO 20712 --- [http-nio-8082-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-13 11:26:48.352  INFO 20712 --- [http-nio-8082-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-13 11:26:48.747  INFO 20712 --- [http-nio-8082-exec-1] c.shops.shop.Controller.CartController   : 获取成功.
+2020-04-13 11:35:13.661  INFO 17828 --- [main] com.shops.shop.ShopApplication           : Starting ShopApplication on TR-PC with PID 17828 (started by Jiangming in E:\兼职\book\book)
+2020-04-13 11:35:13.663  INFO 17828 --- [main] com.shops.shop.ShopApplication           : No active profile set, falling back to default profiles: default
+2020-04-13 11:35:14.109  INFO 17828 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-13 11:35:14.125  INFO 17828 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2020-04-13 11:35:14.292  INFO 17828 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a47bf716] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-13 11:35:14.464  INFO 17828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2020-04-13 11:35:14.478  INFO 17828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-13 11:35:14.478  INFO 17828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2020-04-13 11:35:14.562  INFO 17828 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-13 11:35:14.562  INFO 17828 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 872 ms
+2020-04-13 11:35:14.849  INFO 17828 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-13 11:35:15.052  INFO 17828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2020-04-13 11:35:15.054  INFO 17828 --- [main] com.shops.shop.ShopApplication           : Started ShopApplication in 1.622 seconds (JVM running for 2.201)
+2020-04-13 11:35:15.056  INFO 17828 --- [main] com.shops.shop.ShopApplication           : ●=>商店App后台服务启动...●
+2020-04-13 11:35:29.216  INFO 17828 --- [http-nio-8082-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-13 11:35:29.217  INFO 17828 --- [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-13 11:35:29.222  INFO 17828 --- [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-04-13 11:35:29.252  INFO 17828 --- [http-nio-8082-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-13 11:35:29.676  INFO 17828 --- [http-nio-8082-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-13 11:35:30.054  INFO 17828 --- [http-nio-8082-exec-3] c.shops.shop.Controller.CartController   : 获取成功.

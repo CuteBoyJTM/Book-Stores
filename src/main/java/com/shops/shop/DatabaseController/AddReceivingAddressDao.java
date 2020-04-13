@@ -16,4 +16,7 @@ public interface AddReceivingAddressDao {
                              @Param("_default")int _default);
     @Insert("Call deleteReceivingAddress(#{id})")
     void deleteReceivingAddress(@Param("id")int id);
+    @Insert("Call setDefault(#{user_id},#{receiving_address_id})")
+    void setDefault(@Param("user_id")int user_id,
+                    @Param("receiving_address_id")int receiving_address_id);
 }
