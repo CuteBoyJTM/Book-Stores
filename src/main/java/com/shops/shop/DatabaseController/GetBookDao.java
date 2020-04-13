@@ -18,13 +18,13 @@ public interface GetBookDao {
     List<Books> getBookListAll();
     @Select("Call getBook(#{id})")
     List<Books> getBook(@Param("id")int id);
-    @Select("Call getBookList(#{id})")
+    @Select("Call getBookListByPress(#{id})")
     List<Book> getBookList(@Param("id")int id);
-    @Select("Call getBooks(#{store_id},#{start_subscript},#{pageSize})")
+    @Select("Call getBookListByStore(#{store_id},#{start_subscript},#{pageSize})")
     List<Books> getBooks(@Param("store_id")int store_id,
                          @Param("start_subscript")int start_subscript,
                          @Param("pageSize")int pageSize);
-    @Select("Call getBooksAll(#{start_subscript},#{pageSize})")
+    @Select("Call getBooksOnSale(#{start_subscript},#{pageSize})")
     List<BooksAll> getBooksAll(@Param("start_subscript")int start_subscript,
                                @Param("pageSize")int pageSize);
 
