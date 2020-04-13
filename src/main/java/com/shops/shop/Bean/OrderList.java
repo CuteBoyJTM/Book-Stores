@@ -4,6 +4,15 @@ public class OrderList {
     private int id;
     private double total_price;
     private int courier_number;
+    private int total_count;
+
+    public int getTotal_count() {
+        return total_count;
+    }
+
+    public void setTotal_count(int total_count) {
+        this.total_count = total_count;
+    }
 
     public int getCourier_number() {
         return courier_number;
