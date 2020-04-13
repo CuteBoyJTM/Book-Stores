@@ -39,7 +39,9 @@ public class OrderController {
         Result result = new Result();
         System.out.println(user_id);
         try{
-            int rs = (int) ((Math.random() * 9 + 1) * Math.pow(10, 15 - 1));
+            Long startTs = System.currentTimeMillis();
+            String str = startTs.toString()+user_id;
+            int rs = Integer.parseInt(str.substring(str.length()-9));
             addOrderInterface.addOrder(1,rs,user_id,receiving_address_id);
             addOrderInterface.addOrderContent(rs,book_id,store_id,book_number);
             result.setStatus(100);
@@ -63,7 +65,9 @@ public class OrderController {
         Result result = new Result();
         System.out.println(user_id);
         try{
-            int rs = (int) ((Math.random() * 9 + 1) * Math.pow(10, 15 - 1));
+            Long startTs = System.currentTimeMillis();
+            String str = startTs.toString()+user_id;
+            int rs = Integer.parseInt(str.substring(str.length()-9));
             addOrderInterface.addOrder(2,rs,user_id,receiving_address_id);
             result.setStatus(100);
             result.setMsg("添加成功.");
