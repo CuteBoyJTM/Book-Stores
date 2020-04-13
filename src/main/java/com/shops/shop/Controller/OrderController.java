@@ -195,7 +195,8 @@ public class OrderController {
         try {
             List<OrderFirst> orderFirsts = new ArrayList<>();
             List<OrderList> orderLists = new ArrayList<>(getOrderInterface.getOrderToBePaid(user_id,start_subscript,pageSize));
-            if(orderLists.size()>0){
+            System.out.println(orderLists.size());
+            if(orderLists.size()>0&& orderLists.get(0) != null){
                 System.out.println(orderLists.size());
                 for(int i = 0;i<orderLists.size();i++){
                     OrderFirst orderFirst = new OrderFirst();
@@ -233,7 +234,7 @@ public class OrderController {
         try {
             List<OrderFirst> orderFirsts = new ArrayList<>();
             List<OrderList> orderLists = new ArrayList<>(getOrderInterface.getOrderPaid(user_id,start_subscript,pageSize));
-            if(orderLists.size()>0){
+            if(orderLists.size()>0 && orderLists.get(0) != null){
                 for(int i = 0;i<orderLists.size();i++){
                     OrderFirst orderFirst = new OrderFirst();
                     orderFirst.setOrderList(orderLists.get(i));

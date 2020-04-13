@@ -105,7 +105,15 @@ public class BookController {
             @Param("photos") MultipartFile photos
     ){
         Result result = new Result();
+
         try {
+            if(photos == null){
+                addBookInterface.ReviseBook(id,name,author,theme, publisher_id,pages,proportion,getBookInterface.getBook(id).get(0).getPhoto());
+                result.setStatus(100);
+                result.setMsg("添加成功.");
+                result.setValue(getBookInterface.getBook(id).get(0).getPhoto());
+                log.info("添加成功.");
+            }else{
             if (photos.isEmpty()) {
                 result.setStatus(300);
                 result.setMsg("文件不能为空");
@@ -141,7 +149,7 @@ public class BookController {
                     result.setValue(rootPath);
                     log.info("添加成功.");
                 }
-            }
+            }}
         }catch (Exception e) {
             e.printStackTrace();
             result.setStatus(601);
